@@ -1,0 +1,30 @@
+# product-os — Project Progress
+# This file is the memory bridge between Claude Code sessions.
+# Read this at the START of every session.
+# Update this at the END of every session.
+
+## Project Name
+[not set — run ./skills.sh init]
+
+## Current Phase
+setup
+
+## Last Completed
+[none — just initialized]
+
+## Next Action
+1. Run: ./skills.sh init
+2. Run: ./skills.sh research
+3. Run: ./skills.sh prd
+
+## Sprint
+[not started]
+
+## Session Log
+# Format: [YYYY-MM-DD HH:MM] phase: what happened
+
+## Open Blockers
+[none]
+
+## Decisions Made
+[none yet]
