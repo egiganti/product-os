@@ -45,7 +45,7 @@ mkdir -p launch
 
 # Copy core files if they don't exist
 [ -f "CLAUDE.md" ]              || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/CLAUDE.md" -o CLAUDE.md
-[ -f "skills.sh" ]              || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/skills.sh" -o skills.sh
+[ -f "os" ]              || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/os" -o os
 [ -f "claude-progress.txt" ]    || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/templates/claude-progress.txt" -o claude-progress.txt
 
 # Copy agent files
@@ -67,8 +67,8 @@ done
 [ -f "templates/design.md" ]                || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/templates/design.md" -o templates/design.md
 [ -f "templates/stitch/stitch-brief.md" ]   || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/templates/stitch/stitch-brief.md" -o templates/stitch/stitch-brief.md
 
-chmod +x skills.sh
-success "skills.sh is executable"
+chmod +x os
+success "os is executable"
 
 # Add to .gitignore if it exists
 if [ -f ".gitignore" ]; then
@@ -80,10 +80,10 @@ echo ""
 echo -e "${BOLD}${GREEN}✅ product-os installed!${RESET}"
 echo ""
 echo -e "Next steps:"
-echo -e "  ${CYAN}./skills.sh init${RESET}         Initialize your project"
-echo -e "  ${CYAN}./skills.sh install-all${RESET}  Install all skills"
-echo -e "  ${CYAN}./skills.sh research${RESET}     Start with research"
-echo -e "  ${CYAN}./skills.sh help${RESET}         See all commands"
+echo -e "  ${CYAN}./os init${RESET}         Initialize your project"
+echo -e "  ${CYAN}./os install-all${RESET}  Install all skills"
+echo -e "  ${CYAN}./os research${RESET}     Start with research"
+echo -e "  ${CYAN}./os help${RESET}         See all commands"
 echo ""
 echo -e "⭐ If this saves you time: ${CYAN}https://github.com/[your-username]/product-os${RESET}"
 echo ""

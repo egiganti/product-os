@@ -22,7 +22,7 @@
 
 ## Agents Available
 
-Invoke via `./skills.sh <agent>` or use subagents directly in Claude Code.
+Invoke via `./os <agent>` or use subagents directly in Claude Code.
 
 | Agent | File | Role |
 |-------|------|------|
@@ -71,7 +71,7 @@ Override in `templates/design.md` per project.
 ### Always
 - ✅ Read `claude-progress.txt` at session start
 - ✅ Write tests BEFORE writing implementation (QA agent first)
-- ✅ Run `./skills.sh security` before any PR
+- ✅ Run `./os security` before any PR
 - ✅ Atomic commits with semantic messages (`feat:`, `fix:`, `chore:`)
 - ✅ Update `claude-progress.txt` at session end
 
@@ -87,15 +87,15 @@ Override in `templates/design.md` per project.
 ## Workflow: The product-os Loop
 
 ```
-1. RESEARCH    → ./skills.sh research
-2. PRD         → ./skills.sh prd
-3. DESIGN      → ./skills.sh stitch → ./skills.sh design
-4. SPRINT      → ./skills.sh sprint
+1. RESEARCH    → ./os research
+2. PRD         → ./os prd
+3. DESIGN      → ./os stitch → ./os design
+4. SPRINT      → ./os sprint
 5. BUILD       → Claude Code + dev agent
-6. QA          → ./skills.sh qa (runs before every PR)
-7. SECURITY    → ./skills.sh security (runs on every push via CI)
-8. SHIP        → ./skills.sh ship → auto-deploy on merge to main
-9. LAUNCH      → ./skills.sh launch
+6. QA          → ./os qa (runs before every PR)
+7. SECURITY    → ./os security (runs on every push via CI)
+8. SHIP        → ./os ship → auto-deploy on merge to main
+9. LAUNCH      → ./os launch
 ```
 
 ---
@@ -131,10 +131,10 @@ Override in `templates/design.md` per project.
 
 ## Skills Ecosystem
 
-This project uses skills from [skills.sh](https://skills.sh). Install all at once:
+This project uses skills from [os](https://os). Install all at once:
 
 ```bash
-./skills.sh install-all
+./os install-all
 ```
 
 Or install individually:
@@ -143,7 +143,7 @@ Or install individually:
 npx skills add google-labs-code/stitch-skills/design-md
 npx skills add obra/superpowers/test-driven-development
 npx skills add anthropics/skills/frontend-design
-# ... see skills.sh for full list
+# ... see os for full list
 ```
 
 ---

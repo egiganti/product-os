@@ -8,7 +8,7 @@
 
 [![GitHub Stars](https://img.shields.io/github/stars/[your-username]/product-os?style=flat-square&logo=github)](https://github.com/[your-username]/product-os/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![skills.sh](https://img.shields.io/badge/skills.sh-ecosystem-blue?style=flat-square)](https://skills.sh)
+[![os](https://img.shields.io/badge/os-ecosystem-blue?style=flat-square)](https://os)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-optimized-orange?style=flat-square)](https://claude.ai/code)
 
 [**Quick Start**](#quick-start) • [**How It Works**](#how-it-works) • [**Skills**](#skills-ecosystem) • [**CI/CD**](#cicd-pipeline) • [**Docs**](./docs)
@@ -65,16 +65,16 @@ git clone https://github.com/[your-username]/product-os.git
 cd product-os
 
 # 2. Initialize your project
-./skills.sh init
+./os init
 
-# 3. Install all skills from skills.sh ecosystem
-./skills.sh install-all
+# 3. Install all skills from os ecosystem
+./os install-all
 
 # 4. Start building
-./skills.sh research     # Validate your idea
-./skills.sh prd          # Write the PRD
-./skills.sh stitch       # Design with Google Stitch
-./skills.sh sprint       # Plan your first sprint
+./os research     # Validate your idea
+./os prd          # Write the PRD
+./os stitch       # Design with Google Stitch
+./os sprint       # Plan your first sprint
 ```
 
 ---
@@ -84,18 +84,18 @@ cd product-os
 ### 1. `CLAUDE.md` — The Project Brain
 The central intelligence. Every Claude Code session reads this first. Defines agents, rules, stack, methodology, and workflow.
 
-### 2. `skills.sh` — Your CLI
+### 2. `os` — Your CLI
 One command to activate any agent or skill:
 
 ```bash
-./skills.sh help         # See all available skills
-./skills.sh research     # Market research agent
-./skills.sh prd          # Product requirements generator
-./skills.sh stitch       # Google Stitch design workflow
-./skills.sh qa           # QA agent (test-first)
-./skills.sh security     # OWASP security scan
-./skills.sh ship         # Pre-ship checklist + deploy
-./skills.sh launch       # Go-to-market agent
+./os help         # See all available skills
+./os research     # Market research agent
+./os prd          # Product requirements generator
+./os stitch       # Google Stitch design workflow
+./os qa           # QA agent (test-first)
+./os security     # OWASP security scan
+./os ship         # Pre-ship checklist + deploy
+./os launch       # Go-to-market agent
 ```
 
 ### 3. Specialized Agents
@@ -103,13 +103,13 @@ Located in `.claude/agents/`. Each agent has a specific role, isolated context, 
 
 | Agent | Trigger | Output |
 |-------|---------|--------|
-| `research` | `./skills.sh research` | `research/research-brief.md` |
-| `product` | `./skills.sh prd` | `PRD.md` |
-| `stitch` | `./skills.sh stitch` | `templates/stitch/stitch-brief.md` |
-| `architect` | `./skills.sh design` | `design.md` |
-| `qa` | `./skills.sh qa` | Tests + `qa-report.md` |
+| `research` | `./os research` | `research/research-brief.md` |
+| `product` | `./os prd` | `PRD.md` |
+| `stitch` | `./os stitch` | `templates/stitch/stitch-brief.md` |
+| `architect` | `./os design` | `design.md` |
+| `qa` | `./os qa` | Tests + `qa-report.md` |
 | `security` | Every push (CI) | `security-report.md` |
-| `launch` | `./skills.sh launch` | GTM plan |
+| `launch` | `./os launch` | GTM plan |
 
 ### 4. CI/CD Pipeline (GitHub Actions)
 
@@ -124,7 +124,7 @@ Located in `.claude/agents/`. Each agent has a specific role, isolated context, 
 
 ## Skills Ecosystem
 
-`product-os` uses the best skills from [skills.sh](https://skills.sh):
+`product-os` uses the best skills from [os](https://os):
 
 **Design (Google Stitch stack)**
 - `google-labs-code/stitch-skills/design-md`
@@ -144,7 +144,7 @@ Located in `.claude/agents/`. Each agent has a specific role, isolated context, 
 - `vercel-labs/agent-skills/deploy-to-vercel`
 - `obra/superpowers/requesting-code-review`
 
-[See full list →](./skills.sh)
+[See full list →](./os)
 
 ---
 
@@ -157,7 +157,7 @@ Located in `.claude/agents/`. Each agent has a specific role, isolated context, 
 | **Google Stitch design** | ✅ | ❌ | ❌ | ❌ |
 | Specialized subagents | ✅ | ✅ | ❌ | ❌ |
 | **CI/CD native** | ✅ | ❌ | ❌ | ❌ |
-| **skills.sh CLI** | ✅ | ❌ | ❌ | ❌ |
+| **os CLI** | ✅ | ❌ | ❌ | ❌ |
 | QA test-first loop | ✅ | ✅ | ❌ | ❌ |
 | Security baseline | ✅ | ⚠️ | ❌ | ❌ |
 | Launch / marketing | ✅ | ❌ | ❌ | ❌ |
@@ -169,7 +169,7 @@ Located in `.claude/agents/`. Each agent has a specific role, isolated context, 
 
 ```
 product-os/
-├── skills.sh                    ← CLI entry point
+├── os                    ← CLI entry point
 ├── CLAUDE.md                    ← Project brain for Claude Code
 ├── claude-progress.txt          ← Session state (agent memory)
 │

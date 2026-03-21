@@ -4,7 +4,7 @@
 # Update this at the END of every session.
 
 ## Project Name
-[not set — run ./skills.sh init]
+[not set — run ./os init]
 
 ## Current Phase
 setup
@@ -13,9 +13,9 @@ setup
 [none — just initialized]
 
 ## Next Action
-1. Run: ./skills.sh init
-2. Run: ./skills.sh research
-3. Run: ./skills.sh prd
+1. Run: ./os init
+2. Run: ./os research
+3. Run: ./os prd
 
 ## Sprint
 [not started]

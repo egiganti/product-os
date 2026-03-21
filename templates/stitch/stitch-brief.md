@@ -45,4 +45,4 @@ List the 3-5 most important screens:
 After generating in Stitch:
 1. Export as React components
 2. Place in `/components/ui/`
-3. Run `./skills.sh design` to generate design.md with the stack decisions
+3. Run `./os design` to generate design.md with the stack decisions
