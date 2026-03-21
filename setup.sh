@@ -2,7 +2,7 @@
 # ============================================================
 #  product-os setup.sh
 #  Run once to set up product-os in a new project
-#  Usage: curl -sSL https://raw.githubusercontent.com/[your-username]/product-os/main/setup.sh | bash
+#  Usage: curl -sSL https://raw.githubusercontent.com/egiganti/product-os/main/setup.sh | bash
 # ============================================================
 
 set -euo pipefail
@@ -44,28 +44,28 @@ mkdir -p sprints
 mkdir -p launch
 
 # Copy core files if they don't exist
-[ -f "CLAUDE.md" ]              || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/CLAUDE.md" -o CLAUDE.md
-[ -f "os" ]              || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/os" -o os
-[ -f "claude-progress.txt" ]    || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/templates/claude-progress.txt" -o claude-progress.txt
+[ -f "CLAUDE.md" ]              || curl -sSL "https://raw.githubusercontent.com/egiganti/product-os/main/CLAUDE.md" -o CLAUDE.md
+[ -f "os" ]              || curl -sSL "https://raw.githubusercontent.com/egiganti/product-os/main/os" -o os
+[ -f "claude-progress.txt" ]    || curl -sSL "https://raw.githubusercontent.com/egiganti/product-os/main/templates/claude-progress.txt" -o claude-progress.txt
 
 # Copy agent files
 for agent in research product architect stitch qa security launch; do
   [ -f ".claude/agents/${agent}.md" ] || \
-    curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/.claude/agents/${agent}.md" \
+    curl -sSL "https://raw.githubusercontent.com/egiganti/product-os/main/.claude/agents/${agent}.md" \
     -o ".claude/agents/${agent}.md"
 done
 
 # Copy CI/CD workflows
 for workflow in security-scan qa-review deploy; do
   [ -f ".github/workflows/${workflow}.yml" ] || \
-    curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/.github/workflows/${workflow}.yml" \
+    curl -sSL "https://raw.githubusercontent.com/egiganti/product-os/main/.github/workflows/${workflow}.yml" \
     -o ".github/workflows/${workflow}.yml"
 done
 
 # Copy templates
-[ -f "templates/PRD.md" ]                   || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/templates/PRD.md" -o templates/PRD.md
-[ -f "templates/design.md" ]                || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/templates/design.md" -o templates/design.md
-[ -f "templates/stitch/stitch-brief.md" ]   || curl -sSL "https://raw.githubusercontent.com/[your-username]/product-os/main/templates/stitch/stitch-brief.md" -o templates/stitch/stitch-brief.md
+[ -f "templates/PRD.md" ]                   || curl -sSL "https://raw.githubusercontent.com/egiganti/product-os/main/templates/PRD.md" -o templates/PRD.md
+[ -f "templates/design.md" ]                || curl -sSL "https://raw.githubusercontent.com/egiganti/product-os/main/templates/design.md" -o templates/design.md
+[ -f "templates/stitch/stitch-brief.md" ]   || curl -sSL "https://raw.githubusercontent.com/egiganti/product-os/main/templates/stitch/stitch-brief.md" -o templates/stitch/stitch-brief.md
 
 chmod +x os
 success "os is executable"
@@ -85,5 +85,5 @@ echo -e "  ${CYAN}./os install-all${RESET}  Install all skills"
 echo -e "  ${CYAN}./os research${RESET}     Start with research"
 echo -e "  ${CYAN}./os help${RESET}         See all commands"
 echo ""
-echo -e "⭐ If this saves you time: ${CYAN}https://github.com/[your-username]/product-os${RESET}"
+echo -e "⭐ If this saves you time: ${CYAN}https://github.com/egiganti/product-os${RESET}"
 echo ""

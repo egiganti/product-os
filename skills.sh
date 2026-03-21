@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # ============================================================
-#  product-os — os
+#  product-os — skills.sh
 #  The CLI for your AI-native product OS
-#  Usage: ./os <skill> [options]
+#  Usage: ./skills.sh <skill> [options]
 # ============================================================
 
 set -euo pipefail
@@ -44,7 +44,7 @@ research
 [none — just initialized]
 
 ## Next Action
-Run: ./os research
+Run: ./skills.sh research
 
 ## Sprint
 [not started]
@@ -85,36 +85,36 @@ skill_help() {
   echo -e "${BOLD}Available Skills:${RESET}\n"
 
   echo -e "  ${BOLD}${CYAN}PRODUCT${RESET}"
-  echo -e "  ${GREEN}./os research${RESET}      Run the Research Agent (market, competitors, pain points)"
-  echo -e "  ${GREEN}./os prd${RESET}           Generate PRD interactively with the Product Agent"
-  echo -e "  ${GREEN}./os sprint${RESET}        Kick off a new sprint with user stories + acceptance criteria"
-  echo -e "  ${GREEN}./os brainstorm${RESET}    Structured idea exploration before committing to a direction"
+  echo -e "  ${GREEN}./skills.sh research${RESET}      Run the Research Agent (market, competitors, pain points)"
+  echo -e "  ${GREEN}./skills.sh prd${RESET}           Generate PRD interactively with the Product Agent"
+  echo -e "  ${GREEN}./skills.sh sprint${RESET}        Kick off a new sprint with user stories + acceptance criteria"
+  echo -e "  ${GREEN}./skills.sh brainstorm${RESET}    Structured idea exploration before committing to a direction"
 
   echo -e "\n  ${BOLD}${CYAN}DESIGN${RESET}"
-  echo -e "  ${GREEN}./os stitch${RESET}        Generate Google Stitch brief → UI design"
-  echo -e "  ${GREEN}./os design${RESET}        Create design.md (stack + architecture + UX decisions)"
+  echo -e "  ${GREEN}./skills.sh stitch${RESET}        Generate Google Stitch brief → UI design"
+  echo -e "  ${GREEN}./skills.sh design${RESET}        Create design.md (stack + architecture + UX decisions)"
 
   echo -e "\n  ${BOLD}${CYAN}DEVELOPMENT${RESET}"
-  echo -e "  ${GREEN}./os dev${RESET}           Load dev agent context + coding best practices"
-  echo -e "  ${GREEN}./os agents${RESET}        Spin up parallel subagents for complex tasks"
-  echo -e "  ${GREEN}./os debug${RESET}         Systematic debugging agent"
+  echo -e "  ${GREEN}./skills.sh dev${RESET}           Load dev agent context + coding best practices"
+  echo -e "  ${GREEN}./skills.sh agents${RESET}        Spin up parallel subagents for complex tasks"
+  echo -e "  ${GREEN}./skills.sh debug${RESET}         Systematic debugging agent"
 
   echo -e "\n  ${BOLD}${CYAN}QA & SECURITY${RESET}"
-  echo -e "  ${GREEN}./os qa${RESET}            Run QA Agent (test-first loop, E2E, edge cases)"
-  echo -e "  ${GREEN}./os e2e${RESET}           Playwright E2E test suite"
-  echo -e "  ${GREEN}./os security${RESET}      OWASP security scan + hardening checklist"
-  echo -e "  ${GREEN}./os verify${RESET}        Pre-merge verification checklist"
+  echo -e "  ${GREEN}./skills.sh qa${RESET}            Run QA Agent (test-first loop, E2E, edge cases)"
+  echo -e "  ${GREEN}./skills.sh e2e${RESET}           Playwright E2E test suite"
+  echo -e "  ${GREEN}./skills.sh security${RESET}      OWASP security scan + hardening checklist"
+  echo -e "  ${GREEN}./skills.sh verify${RESET}        Pre-merge verification checklist"
 
   echo -e "\n  ${BOLD}${CYAN}SHIP & LAUNCH${RESET}"
-  echo -e "  ${GREEN}./os ship${RESET}          Pre-ship checklist + deploy to production"
-  echo -e "  ${GREEN}./os launch${RESET}        Go-to-market checklist (SEO, analytics, marketing)"
-  echo -e "  ${GREEN}./os metrics${RESET}       Analytics tracking setup"
+  echo -e "  ${GREEN}./skills.sh ship${RESET}          Pre-ship checklist + deploy to production"
+  echo -e "  ${GREEN}./skills.sh launch${RESET}        Go-to-market checklist (SEO, analytics, marketing)"
+  echo -e "  ${GREEN}./skills.sh metrics${RESET}       Analytics tracking setup"
 
   echo -e "\n  ${BOLD}${CYAN}FRAMEWORK${RESET}"
-  echo -e "  ${GREEN}./os install-all${RESET}   Install all skills from os ecosystem"
-  echo -e "  ${GREEN}./os status${RESET}        Show current project phase and progress"
-  echo -e "  ${GREEN}./os init${RESET}          Initialize product-os in a new project"
-  echo -e "  ${GREEN}./os help${RESET}          Show this help\n"
+  echo -e "  ${GREEN}./skills.sh install-all${RESET}   Install all skills from skills.sh ecosystem"
+  echo -e "  ${GREEN}./skills.sh status${RESET}        Show current project phase and progress"
+  echo -e "  ${GREEN}./skills.sh init${RESET}          Initialize product-os in a new project"
+  echo -e "  ${GREEN}./skills.sh help${RESET}          Show this help\n"
 }
 
 # ── Skill: status ────────────────────────────────────────────
@@ -135,12 +135,12 @@ skill_init() {
   sed -i.bak "s/\[not set\]/${project_name}/" "$PROGRESS_FILE"
   success "Initialized: ${project_name}"
   log "Description: ${project_desc}"
-  log "Next step: ./os research"
+  log "Next step: ./skills.sh research"
 }
 
 # ── Skill: install-all ───────────────────────────────────────
 skill_install_all() {
-  section "Installing skills from os ecosystem"
+  section "Installing skills from skills.sh ecosystem"
 
   log "Installing Product skills..."
   npx skills add github/awesome-copilot/prd
@@ -200,7 +200,7 @@ skill_install_all() {
   npx skills add coreyhaines31/marketingskills/analytics-tracking
   success "Launch skills installed"
 
-  success "All skills installed! Run ./os help to see what's available."
+  success "All skills installed! Run ./skills.sh help to see what's available."
   update_progress "setup" "All skills installed"
 }
 
@@ -244,7 +244,7 @@ skill_stitch() {
   echo -e "  2. Go to ${CYAN}https://stitch.withgoogle.com/${RESET}"
   echo -e "  3. Paste the brief → generate UI"
   echo -e "  4. Export components → place in ${CYAN}components/ui/${RESET}"
-  echo -e "  5. Run ${CYAN}./os design${RESET} to generate design.md\n"
+  echo -e "  5. Run ${CYAN}./skills.sh design${RESET} to generate design.md\n"
   update_progress "design" "Stitch agent activated"
 }
 
@@ -313,8 +313,8 @@ skill_ship() {
   check_progress
 
   echo -e "\n${BOLD}Pre-Ship Checklist:${RESET}"
-  echo -e "  ${CYAN}□${RESET} All tests passing (./os qa)"
-  echo -e "  ${CYAN}□${RESET} Security scan clean (./os security)"
+  echo -e "  ${CYAN}□${RESET} All tests passing (./skills.sh qa)"
+  echo -e "  ${CYAN}□${RESET} Security scan clean (./skills.sh security)"
   echo -e "  ${CYAN}□${RESET} E2E verified in staging"
   echo -e "  ${CYAN}□${RESET} .env.example updated"
   echo -e "  ${CYAN}□${RESET} No console.logs in production code"
@@ -429,7 +429,7 @@ main() {
     metrics)          skill_metrics ;;
     dev)              skill_dev ;;
     *)
-      error "Unknown skill: '${skill}'. Run ./os help to see all available skills."
+      error "Unknown skill: '${skill}'. Run ./skills.sh help to see all available skills."
       ;;
   esac
 }

@@ -6,7 +6,7 @@
 
 **From raw idea → research → design → code → ship. With agents. In days, not months.**
 
-[![GitHub Stars](https://img.shields.io/github/stars/[your-username]/product-os?style=flat-square&logo=github)](https://github.com/[your-username]/product-os/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/egiganti/product-os?style=flat-square&logo=github)](https://github.com/egiganti/product-os/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![os](https://img.shields.io/badge/os-ecosystem-blue?style=flat-square)](https://os)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-optimized-orange?style=flat-square)](https://claude.ai/code)
@@ -61,7 +61,7 @@ LIVE PRODUCT WITH METRICS
 
 ```bash
 # 1. Clone
-git clone https://github.com/[your-username]/product-os.git
+git clone https://github.com/egiganti/product-os.git
 cd product-os
 
 # 2. Initialize your project
@@ -213,7 +213,7 @@ product-os/
 PRs welcome. This framework is built in public and improves with every project that uses it.
 
 ```bash
-git clone https://github.com/[your-username]/product-os
+git clone https://github.com/egiganti/product-os
 cd product-os
 # Make your improvements
 # Open a PR
@@ -226,7 +226,7 @@ cd product-os
 If `product-os` saves you time, consider:
 
 - ⭐ **Star this repo** — it helps others find it
-- 💖 **[Sponsor on GitHub](https://github.com/sponsors/[your-username])** — keep it free for everyone
+- 💖 **[Sponsor on GitHub](https://github.com/sponsors/egiganti)** — keep it free for everyone
 - 🐛 **Open issues** — help us improve
 - 📣 **Share it** — tweet, post, tell your team
 
@@ -242,6 +242,6 @@ MIT — free forever. Build great products.
 
 Built with ❤️ using Claude Code + product-os
 
-**[⭐ Star us on GitHub](https://github.com/[your-username]/product-os)**
+**[⭐ Star us on GitHub](https://github.com/egiganti/product-os)**
 
 </div>
