@@ -42,12 +42,6 @@ Invoke via `./os <agent>` or use subagents directly in Claude Code.
 Always read `claude-progress.txt` before starting any session.
 Always update `claude-progress.txt` after completing any phase.
 
-```
-Current phase: [READ FROM claude-progress.txt]
-Last completed: [READ FROM claude-progress.txt]
-Next action: [READ FROM claude-progress.txt]
-```
-
 ---
 
 ## Stack Defaults
@@ -61,8 +55,6 @@ CI/CD:      GitHub Actions
 Testing:    Vitest + Playwright
 Design:     Google Stitch → React components
 ```
-
-Override in `templates/design.md` per project.
 
 ---
 
@@ -80,7 +72,6 @@ Override in `templates/design.md` per project.
 - ❌ Merge without QA agent approval
 - ❌ Skip the PRD phase — no code without specs
 - ❌ Mark a feature complete without E2E verification
-- ❌ One-shot large features — break into atomic stories
 
 ---
 
@@ -92,8 +83,8 @@ Override in `templates/design.md` per project.
 3. DESIGN      → ./os stitch → ./os design
 4. SPRINT      → ./os sprint
 5. BUILD       → Claude Code + dev agent
-6. QA          → ./os qa (runs before every PR)
-7. SECURITY    → ./os security (runs on every push via CI)
+6. QA          → ./os qa
+7. SECURITY    → ./os security (CI on every push)
 8. SHIP        → ./os ship → auto-deploy on merge to main
 9. LAUNCH      → ./os launch
 ```
@@ -106,64 +97,14 @@ Override in `templates/design.md` per project.
 - **Story format:** As a [user], I want [action], so that [outcome]
 - **Acceptance criteria:** Defined BEFORE development starts
 - **Definition of Done:** Tests pass + Security scan clean + E2E verified + Metrics instrumented
-- **Retrospective:** End of every sprint — what worked, what didn't, what to change
 
 ---
 
-## Context Management
+## Skills
 
-- Keep CLAUDE.md under 500 lines
-- Each agent has its own isolated context (see `.claude/agents/`)
-- Use `claude-progress.txt` to bridge sessions
-- Prefer subagents for isolated tasks (security review, QA, research)
+Some capabilities are powered by open-source tooling from the agent skills ecosystem.
 
----
-
-## Subagent Delegation Pattern
-
-```
-"Use the security subagent to review this authentication code."
-"Use the QA subagent to write tests for the payment flow."
-"Use the research subagent to analyze competitors for [feature]."
-```
-
----
-
-## Skills Ecosystem
-
-This project uses skills from [os](https://os). Install all at once:
-
+Install all:
 ```bash
 ./os install-all
 ```
-
-Or install individually:
-
-```bash
-npx skills add google-labs-code/stitch-skills/design-md
-npx skills add obra/superpowers/test-driven-development
-npx skills add anthropics/skills/frontend-design
-# ... see os for full list
-```
-
----
-
-## CI/CD Pipeline
-
-| Trigger | Workflow | Agent |
-|---------|----------|-------|
-| Push any branch | `security-scan.yml` | Security Agent |
-| Open PR | `qa-review.yml` | QA Agent |
-| Open PR | `agent-pr-comment.yml` | Review Agent |
-| Merge to main | `deploy.yml` | Deploy |
-
----
-
-## Product Mindset
-
-> "Done ≠ shipped. Done = metrics moving."
-
-- Every feature ships with at least 1 success metric
-- Analytics tracking from sprint 1, never retrofitted
-- User feedback loop built into launch checklist
-- SEO and performance are features, not afterthoughts

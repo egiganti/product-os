@@ -1,7 +1,6 @@
 # product-os — Project Progress
-# This file is the memory bridge between Claude Code sessions.
-# Read this at the START of every session.
-# Update this at the END of every session.
+# READ at START of every Claude Code session.
+# UPDATE at END of every session.
 
 ## Project Name
 [not set — run ./os init]
@@ -10,7 +9,7 @@
 setup
 
 ## Last Completed
-[none — just initialized]
+Initialized with product-os
 
 ## Next Action
 1. Run: ./os init
@@ -18,13 +17,13 @@ setup
 3. Run: ./os prd
 
 ## Sprint
-[not started]
+Not started
 
 ## Session Log
-# Format: [YYYY-MM-DD HH:MM] phase: what happened
+# [YYYY-MM-DD HH:MM] phase: what happened
 
 ## Open Blockers
-[none]
+None
 
 ## Decisions Made
-[none yet]
+None yet
